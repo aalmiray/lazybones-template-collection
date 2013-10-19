@@ -17,7 +17,7 @@ The project's structure is laid out as follows
               |
                  // application sources
               |
-              Â+- resource
+              +- resources
               |
                  // FXML and CSS
 
