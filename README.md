@@ -10,3 +10,5 @@ The current list contains the following templates
 
 [Lazybones]: http://github.com/pledbrook/lazybones
 [afterburner.fx]: http://afterburner.adam-bien.com
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/aalmiray/lazybones-template-collection/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
