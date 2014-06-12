@@ -1,32 +1,28 @@
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-apply from: 'http://dl.bintray.com/content/shemnon/javafx-gradle/0.3.0/javafx.plugin'
-
-javafx {
-    profiles {
-        // not every possible platform override, but ones that have a known impact
-        windows {
-            id = 'c533f663-1efd-489f-b910-4c7ec20c7fd0'
-            category = 'JavaFX Demos'
-            javaRuntime = 'C:/Program Files (x86)/Java/jdk1.7.0_45'
+buildscript {
+    File javaHome = new File(System.properties['java.home'])
+    javaHome = javaHome.name == 'jre' ? javaHome.parentFile : javaHome
+    String jfxrtLocation = new File("${javaHome}/jre/lib/jfxrt.jar").absolutePath
+    // JavaFX locations for JDK7, JDK7, JDK8
+    for (location in ['lib/jfxrt.jar', 'jre/lib/jfxrt.jar', 'jre/lib/ext/jfxrt.jar']) {
+        File file = new File(javaHome, location)
+        if (file.exists()) {
+            jfxrtLocation = file.absolutePath
+            break
         }
+    }
 
-        macosx {
-            id = 'net.java.openjdk.openjfx.Ensemble2'
-            category = 'public.app-category.developer-tools'
-            javaRuntime = '/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/'
-        }
-
-        linux {
-            // linux doesn't care about id, it goes un-used at the moment
-            category = 'Development'
-            // good luck finding a standard location for the JDK
-            //javaRuntime = '/usr/lib/jvm/java-7-oracle'
-        }
+    repositories {
+        jcenter()
+        maven { url 'http://dl.bintray.com/content/shemnon/javafx-gradle/' }
+        maven { url 'http://repository-javafx-gradle-plugin.forge.cloudbees.com/snapshot' }
+    }
+    dependencies {
+        classpath 'org.bitbucket.shemnon.javafxplugin:gradle-javafx-plugin:0.4.0'
+        classpath project.files("${javaHome}/lib/ant-javafx.jar")
+        classpath project.files(jfxrtLocation)
     }
 }
 
-repositories {
-    mavenCentral()
+if (!project.plugins.findPlugin(org.bitbucket.shemnon.javafxplugin.JavaFXPlugin)) {
+    project.apply(plugin: org.bitbucket.shemnon.javafxplugin.JavaFXPlugin)
 }
