@@ -1,0 +1,6 @@
+anchorPane(id: 'anchorPane', prefHeight: 80.0, prefWidth: 384.0) {
+    label(layoutX: 14.0, layoutY: 14.0, 'Please enter your name:')
+    textField(id: 'name', layoutX: 172.0, layoutY: 11.0, prefWidth: 200.0)
+    button(layoutX: 172.0, layoutY: 45.0, mnemonicParsing: false, prefWidth: 200.0, onAction: { presenter.sayHello() }, 'Say Hello!')
+}
+

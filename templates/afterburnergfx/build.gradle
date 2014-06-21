@@ -1,0 +1,20 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply from: 'gradle/javafx.gradle'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:\$groovyVersion"
+    compile "com.odelia:afterburner.gfx:\$afterburnerGfxVersion"
+    compile 'javax.inject:javax.inject:1'
+    compile "org.codehaus.groovyfx:groovyfx:\$groovyFXVersion"
+}
+
+javafx {
+    mainClass '${project_package_name}.${project_capitalized_name}Main'
+}
