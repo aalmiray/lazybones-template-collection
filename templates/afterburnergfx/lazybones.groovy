@@ -7,7 +7,7 @@ props.project_capitalized_name = props.project_name.capitalize()
 props.project_group_id = ask("Define value for 'group' [org.example]: ", "org.example", "group")
 props.project_version = ask("Define value for 'version' [0.1.0-SNAPSHOT]: ", "0.1.0-SNAPSHOT", "version")
 props.project_package_name = ask("Define value for 'packageName' ["+ props.project_group_id +"]: ", props.project_group_id, "packageName")
-props.project_afterburnergfx_version = ask("Define value for 'afterburnerGfxVersion' [0.2]: ", "0.2", "afterburnerGfxVersion")
+props.project_afterburnergfx_version = ask("Define value for 'afterburnerGfxVersion' [0.2.1]: ", "0.2.1", "afterburnerGfxVersion")
 
 processTemplates 'build.gradle', props
 processTemplates 'gradle.properties', props

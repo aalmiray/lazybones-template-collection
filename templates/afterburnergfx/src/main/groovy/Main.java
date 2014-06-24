@@ -1,6 +1,6 @@
 package ${project_package_name};
 
-import com.airhacks.afterburner.injection.InjectionProvider;
+import com.airhacks.afterburner.injection.Injector;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -20,6 +20,6 @@ public class ${project_capitalized_name}Main extends Application {
 
     @Override
     public void stop() throws Exception {
-        InjectionProvider.forgetAll();
+        Injector.forgetAll();
     }
 }
