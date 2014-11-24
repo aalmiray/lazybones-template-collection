@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.0'
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.1'
     }
 }
 
@@ -15,14 +15,12 @@ repositories {
 }
 
 asciidoctor {
-    options = [
-        attributes: [
-            'source-highlighter'    : 'coderay',
-            'coderay-linenums-mode' : 'table',
-            icon                    : 'font',
-            linkattrs               : true,
-            doctype                 : 'book',
-            encoding                : 'utf-8'
-        ]
-    ]
+    options doctype: 'book'
+
+    attributes 'source-highlighter'    : 'coderay',
+               'coderay-linenums-mode' : 'table',
+               toc                     : 'left',
+               icon                    : 'font',
+               linkattrs               : true,
+               encoding                : 'utf-8'
 }
