@@ -22,3 +22,6 @@ The project's structure is laid out as follows
 Execute the following command to compile and package the project
 
     ./gradlew build
+
+Don't forget to update the pom configuration section found at
+`gradle/publishing.gradle`.

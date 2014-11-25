@@ -60,7 +60,7 @@ publishing {
     publications {
         mavenCustom(MavenPublication) {
             from components.java
-            artifact sourceJar
+            artifact sourcesJar
 
             pom.withXml {
                 asNode().children().last() + pomConfig
