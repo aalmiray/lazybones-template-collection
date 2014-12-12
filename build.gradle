@@ -18,15 +18,18 @@ apply plugin: 'idea'
 
 buildscript {
     repositories {
+        jcenter()
         maven { url 'http://dl.bintray.com/pledbrook/plugins' }
     }
 
     dependencies {
         classpath 'uk.co.cacoethes:lazybones-gradle:1.2.2'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.6'
     }
 }
 
 apply plugin: 'uk.co.cacoethes.lazybones-templates'
+apply plugin: 'com.github.ben-manes.versions'
 
 lazybones {
     repositoryUrl = 'https://api.bintray.com/content/aalmiray/kordamp'
