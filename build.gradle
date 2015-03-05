@@ -23,8 +23,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'uk.co.cacoethes:lazybones-gradle:1.2.2'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.6'
+        classpath 'uk.co.cacoethes:lazybones-gradle:1.2.3'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.8'
     }
 }
 
