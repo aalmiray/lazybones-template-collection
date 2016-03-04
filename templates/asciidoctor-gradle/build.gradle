@@ -4,19 +4,21 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
         classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.9'
-        classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
-        classpath 'com.bluepapa32:gradle-watch-plugin:0.1.5'
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.12.0'
     }
 }
 
 apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'com.github.ben-manes.versions'
-apply plugin: 'com.bluepapa32.watch'
 
 repositories {
     jcenter()
+}
+
+asciidoctorj {
+    version = '1.5.4'
 }
 
 asciidoctor {
@@ -30,11 +32,4 @@ asciidoctor {
                icon                    : 'font',
                linkattrs               : true,
                encoding                : 'utf-8'
-}
-
-watch {
-    asciidoc {
-        files fileTree(dir: 'src/docs/asciidoc', include: '**/*.adoc')
-        tasks 'asciidoctor'
-    }
 }
