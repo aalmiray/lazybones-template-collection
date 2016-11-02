@@ -26,6 +26,11 @@ jar {
             'Implementation-Vendor': project.project_vendor
         )
     }
+	
+	metaInf {
+		from rootProject.file('.')
+		include 'LICENSE'
+	}
 }
 
 def pomConfig = {
